@@ -10,6 +10,7 @@ import pandas as pd
 import os
 
 
+## Task 1
 # converting to df
 df = pd.read_excel('raw_data.xlsx')
 df = df.rename(columns={'Unnamed: 0': 'Metric', 'company': 'Company'})
@@ -34,3 +35,15 @@ result_df = melted_df.pivot_table(index=['Company', 'Metric'], columns='Year', v
 result_df.columns = ['{}_{}'.format(val[0], val[1]) for val in result_df.columns]
 
 print(result_df.head())
+
+
+## Task 2, Chat bot
+
+# preparing Q and As
+responses = {  
+    "total revenue microsoft 2025": "The total revenue for Microsoft in 2025 is $281,724,000,000.",  
+    "net income change tesla last year": "Tesla’s net income increased by 15.5% from 2024 to 2025.",  
+    "total assets apple 2023": "Apple's total assets for 2023 were $257,960,000,000.",  
+    "cash flow operating activities microsoft": "Microsoft’s cash flow from operating activities in 2025 was $136,162,000,000.",  
+    "net income change apple 2024 to 2025": "Apple’s net income increased by approximately 15.5% from 2024 to 2025."  
+}
