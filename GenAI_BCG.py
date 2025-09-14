@@ -47,3 +47,15 @@ responses = {
     "cash flow operating activities microsoft": "Microsoft’s cash flow from operating activities in 2025 was $136,162,000,000.",  
     "net income change apple 2024 to 2025": "Apple’s net income increased by approximately 15.5% from 2024 to 2025."  
 }
+
+
+# chatbot if else
+def chatbot(user_query):
+    # Normalize input for case-insensitive matching
+    query_key = user_query.lower()
+    
+    if query_key in responses:
+        return responses[query_key]
+    else:
+        return "Sorry, I can only provide information on predefined queries."
+
